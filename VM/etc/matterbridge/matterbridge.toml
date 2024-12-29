@@ -1,0 +1,28 @@
+[general]
+LogFile="/var/log/matterbridge/matterbridge.log"
+
+[xmpp]
+[xmpp.iemchat]
+Server="weather.im:5222"
+Jid="YOUR-JABBER-OR-XMPP-ID-GOES-HERE"
+Password="YOUR-JABBER-OR-XMPP-PASSWORD-GOES-HERE"
+Muc="conference.weather.im"
+Nick="K4NWS-Listener"
+RemoteNickFormat="[{PROTOCOL}] <{NICK}> "
+#NoTLS=true
+SkipTLSVerify=true
+
+[slack]
+[slack.bmxspotterchat]
+Token="BOT-TOKEN-GOES-HERE"
+RemoteNickFormat="{BRIDGE} - @{NICK}"
+
+[[gateway]]
+name="k4nwsbot"
+enable=true
+[[gateway.in]]
+account="xmpp.iemchat"
+channel="bmxchat"
+[[gateway.out]]
+account="slack.bmxspotterchat"
+channel="bot-stream"
