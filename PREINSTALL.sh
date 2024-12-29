@@ -15,8 +15,9 @@ mkdir /var/log/matterbridge
 wget -P /srv/matterbridge/ https://github.com/42wim/matterbridge/releases/download/v1.26.0/matterbridge-1.26.0-linux-64bit
 ln -s /srv/matterbridge/matterbridge-1.26.0-linux-64bit /bin/matterbridge
 
-# Create Skeleton configuration file
+# Create Skeleton configuration files
 touch /etc/matterbridge/matterbridge.toml
+touch /etc/systemd/system/matterbridge.service
 
 # Create user and group, group may fail, but it's ok if already exists.
 adduser matterbridge
