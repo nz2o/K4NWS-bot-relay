@@ -4,7 +4,7 @@ LogFile="/var/log/matterbridge/matterbridge.log"
 [xmpp]
 [xmpp.iemchat]
 Server="weather.im:5222"
-Jid="YOUR-JABBER-OR-XMPP-ID-GOES-HERE"
+Jid="YOUR-JABBER-OR-XMPP-ID-GOES-HERE@SERVER.COM"
 Password="YOUR-JABBER-OR-XMPP-PASSWORD-GOES-HERE"
 Muc="conference.weather.im"
 Nick="K4NWS-Listener"
