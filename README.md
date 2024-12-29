@@ -24,5 +24,20 @@ nano /etc/matterbridge/matterbridge.toml
 5. Slack bot setup also has to happen here, using [this guide](https://github.com/42wim/matterbridge/wiki/Slack-bot-setup#bot-based-setup). Note that you might have to tweak oauth scopes, because Slack chose to go granular.
 
 ### Pre-flight Check.
+6. From anywhere, run `matterbridge -version`. Expected output is the version number.
+7. From anywhere, run `matterbridge -debug -conf /etc/matterbridge/matterbridge.toml`
+Expected output: 
+```
+[0000]  INFO main:         [setupLogger:matterbridge.go:104] Enabling debug logging.
+[0000]  INFO main:         [main:matterbridge.go:44] Running version 1.26.0 6dafebc7
+[0000]  INFO config:       [NewConfig:bridge/config/config.go:274] Opening log file /var/log/matterbridge/matterbridge.log
+```
+Be sure to examine the log. Address any errors.
+```
+nano /var/log/matterbridge/matterbridge.log
+```
+
+
+8. 
 9. To exec manually, `./matterbridge -conf '/etc/matterbridge/matterbridge.toml'` if you followed the above.
 10. Let's make a SYSTEMD service! Use [this guide](https://github.com/42wim/matterbridge/wiki/Service-files). See example in repository.
