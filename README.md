@@ -16,19 +16,12 @@ bash -c "$(wget -qLO - https://raw.githubusercontent.com/nz2o/K4NWS-bot-relay/ma
 ```
 
 ### Create your configuration files.
-4. Configure the matterbridge.toml file, and place it in `/etc/matterbridge/matterbridge.toml`. See this repository's example configuration for a better idea of what needs to happen.
+4. Configure the [matterbridge.toml](https://github.com/nz2o/K4NWS-bot-relay/blob/main/VM/etc/matterbridge/matterbridge.toml) file, and place it in `/etc/matterbridge/matterbridge.toml`. See this repository's example configuration for a better idea of what needs to happen.
 ```
 nano /etc/matterbridge/matterbridge.toml
 ```
 
-5. Slack bot setup also has to happen here, using [this guide](https://github.com/42wim/matterbridge/wiki/Slack-bot-setup#bot-based-setup).
-
-
-### Prepare a somewhat secure environment, set permissions.
-5. Create a user that the daemon will run as. `sudo useradd -r matterbridge` or something like `sudo adduser --system --no-create-home --group matterbridge` depending on which Linux you're running.
-6. Set owner to the new user. Example `sudo chown -R matterbridge:matterbridge /srv/matterbridge` and `sudo chown -R matterbridge:matterbridge /etc/matterbridge`
-7. Make the binary executable. `sudo chmod 777 /srv/matterbridge/matterbridge.1.24.1-linux-64bit`. Doesn't matter if everyone can run it, the magic is in the configuration files.
-8. Secure your configuration. `sudo chmod -R 660 /etc/matterbridge`. Failure to secure this to just the Matterbridge service account is a no-no, because it contains credentials.
+5. Slack bot setup also has to happen here, using [this guide](https://github.com/42wim/matterbridge/wiki/Slack-bot-setup#bot-based-setup). Note that you might have to tweak oauth scopes, because Slack chose to go granular.
 
 ### Pre-flight Check.
 9. To exec manually, `./matterbridge -conf '/etc/matterbridge/matterbridge.toml'` if you followed the above.
