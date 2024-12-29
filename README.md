@@ -9,7 +9,7 @@ Provide a repository to store how to configure Matterbridge from [github](https:
 
 3. REVIEW/UPDATE [releases](https://github.com/42wim/matterbridge/releases/), if new versions exist, and and run the `INSTALL.sh` script.
 *Always pre-review curl-bash scripts, for security! They can change, no matter how much you trust the repository.
-`curl -s https://github.com/nz2o/K4NWS-bot-relay/raw/refs/heads/main/PREINSTALL.sh | bash`
+`curl -O https://raw.githubusercontent.com/nz2o/K4NWS-bot-relay/main/PREINSTALL.sh | bash`
 
 ### Create your configuration files.
 4. Configure the matterbridge.toml file, and place it in `/etc/matterbridge/matterbridge.toml`. See this repository's example configuration for a better idea of what needs to happen.
