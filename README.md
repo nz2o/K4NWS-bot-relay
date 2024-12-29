@@ -31,13 +31,18 @@ Expected output:
 [0000]  INFO main:         [setupLogger:matterbridge.go:104] Enabling debug logging.
 [0000]  INFO main:         [main:matterbridge.go:44] Running version 1.26.0 6dafebc7
 [0000]  INFO config:       [NewConfig:bridge/config/config.go:274] Opening log file /var/log/matterbridge/matterbridge.log
+*** It should NOT return you to a shell prompt. Use Ctrl+C to break out/end the app.
 ```
 Be sure to examine the log. Address any errors.
 ```
 nano /var/log/matterbridge/matterbridge.log
 ```
+Your output should look like this:
+```
+[0000]  INFO router:       [Start:gateway/router.go:66] Parsing gateway k4nwsbot
+[0000]  INFO router:       [Start:gateway/router.go:75] Starting bridge: xmpp.iemchat
+[0000]  INFO xmpp:         [Connect:bridge/xmpp/xmpp.go:45] Connecting weather.im:5222
+```
+If that's good, it's time to create a SYSTEMD service, to ensure it runs at start, and restarts at error.
 
-
-8. 
-9. To exec manually, `./matterbridge -conf '/etc/matterbridge/matterbridge.toml'` if you followed the above.
-10. Let's make a SYSTEMD service! Use [this guide](https://github.com/42wim/matterbridge/wiki/Service-files). See example in repository.
+8. Let's make a SYSTEMD service! Use [this guide](https://github.com/42wim/matterbridge/wiki/Service-files). See example in repository.
