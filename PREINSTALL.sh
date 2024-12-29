@@ -13,18 +13,19 @@ mkdir /var/log/matterbridge
 
 # Grab the binary, make a symbolic link
 wget -P /srv/matterbridge/ https://github.com/42wim/matterbridge/releases/download/v1.26.0/matterbridge-1.26.0-linux-64bit
-ln -s /srv/matterbridge/matterbridge.1.26.1-linux-64bit /bin/matterbridge
+ln -s /srv/matterbridge/matterbridge.1.26.0-linux-64bit /bin/matterbridge
 
 # Create Skeleton configuration file
 touch /etc/matterbridge/matterbridge.toml
 
-# Create user and group
-adduser --group matterbridge
+# Create user and group, group may fail, but it's ok if already exists.
+adduser matterbridge
+addgroup matterbridge
 
 # Set owners
 chown -R matterbridge:matterbridge /srv/matterbridge
 chown -R matterbridge:matterbridge /etc/matterbridge
 
 # Set Permissions
-chmod a+x /srv/matterbridge/matterbridge.1.26.1-linux-64bit
+chmod a+x /srv/matterbridge/matterbridge-1.26.0-linux-64bit
 chmod 650 /etc/matterbridge/matterbridge.toml
