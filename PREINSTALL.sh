@@ -13,7 +13,7 @@ mkdir /var/log/matterbridge
 
 # Grab the binary, make a symbolic link
 wget -P /srv/matterbridge/ https://github.com/42wim/matterbridge/releases/download/v1.26.0/matterbridge-1.26.0-linux-64bit
-ln -s /srv/matterbridge/matterbridge.1.26.0-linux-64bit /bin/matterbridge
+ln -s /srv/matterbridge/matterbridge-1.26.0-linux-64bit /bin/matterbridge
 
 # Create Skeleton configuration file
 touch /etc/matterbridge/matterbridge.toml
