@@ -7,13 +7,13 @@ Provide a repository to store how to configure Matterbridge from [github](https:
 1. Get a Linux VM with internet access. Ensure it is fully updated on the latest LTS release of Ubuntu, or appropriate Debian distribution, to stay with this guide. Document your work, keep the passwords stored securely and in a location accessible to the ALERT IT Group.
 2. Brute force attacks no VM Servers is a very real thing. Appropriately harden the Linux installation. [See potential guide](https://www.digitalocean.com/community/tutorials/how-to-harden-openssh-on-ubuntu-20-04). In essence, ensure that authentication is based on certificate rather than password. Create sudo logins, allow SSH for those logins, and disable ssh for root login. Arrange for some kind of update cadence, to address any CVE's that might come up. Understand the security risk surface: While this VM is likely not going to store sensitive nonpublic info, you never want a rogue VM using Slack or XMPP credentials on ALERT's behalf.
 
-
-3. REVIEW/UPDATE [releases](https://github.com/42wim/matterbridge/releases/), and and run the `INSTALL.sh` script.
-
-`curl-bash: `
+3. REVIEW/UPDATE [releases](https://github.com/42wim/matterbridge/releases/), if new versions exist, and and run the `INSTALL.sh` script.
+*Always pre-review curl-bash scripts, for security! They can change, no matter how much you trust the repository.
+`curl -s https://github.com/nz2o/K4NWS-bot-relay/raw/refs/heads/main/PREINSTALL.sh | bash`
 
 ### Create your configuration files.
-4. Configure the matterbridge.toml file, and place it in an appropriate location. Suggest something like `/etc/matterbridge/matterbridge.toml`. See this repository's example configuration for a better idea of what needs to happen. Slack bot setup also has to happen here, using [this guide](https://github.com/42wim/matterbridge/wiki/Slack-bot-setup#bot-based-setup).
+4. Configure the matterbridge.toml file, and place it in `/etc/matterbridge/matterbridge.toml`. See this repository's example configuration for a better idea of what needs to happen.
+5. Slack bot setup also has to happen here, using [this guide](https://github.com/42wim/matterbridge/wiki/Slack-bot-setup#bot-based-setup).
 
 
 ### Prepare a somewhat secure environment, set permissions.
