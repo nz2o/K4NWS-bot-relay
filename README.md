@@ -49,22 +49,19 @@ If that's good, it's time to create a SYSTEMD service, to ensure it runs at star
 Once you create the file, run `systemctl daemon-reload` to refresh SYSTEMD.
 9. Start the service `service matterbridge start`
 10. Check the service `service matterbridge status`
-It should look like this:
+It should look like this: If it does, you're done!
 ```
 ● matterbridge.service - Matterbridge daemon
      Loaded: loaded (/etc/systemd/system/matterbridge.service; enabled; preset: enabled)
-     Active: active (running) since Sun 2024-12-29 18:24:44 UTC; 25s ago
-   Main PID: 2216 (matterbridge)
+     Active: active (running) since Sun 2024-12-29 18:26:42 UTC; 4s ago
+   Main PID: 2264 (matterbridge)
       Tasks: 5 (limit: 2877)
-     Memory: 8.3M (peak: 8.8M)
-        CPU: 79ms
+     Memory: 8.4M (peak: 8.8M)
+        CPU: 68ms
      CGroup: /system.slice/matterbridge.service
-             └─2216 /bin/matterbridge -conf /etc/matterbridge/matterbridge.toml
+             └─2264 /bin/matterbridge -conf /etc/matterbridge/matterbridge.toml
 
-Dec 29 18:24:44 racknerd-28fca83 systemd[1]: Started matterbridge.service - Matterbridge daemon.
-Dec 29 18:24:44 racknerd-28fca83 matterbridge[2216]: time="2024-12-29T18:24:44Z" level=info msg="Running version 1.26.0 6dafebc7" prefix=main
-Dec 29 18:24:44 racknerd-28fca83 matterbridge[2216]: time="2024-12-29T18:24:44Z" level=info msg="Parsing gateway k4nwsbot" prefix=router
-Dec 29 18:24:44 racknerd-28fca83 matterbridge[2216]: time="2024-12-29T18:24:44Z" level=info msg="Starting bridge: xmpp.iemchat " prefix=router
-Dec 29 18:24:44 racknerd-28fca83 matterbridge[2216]: time="2024-12-29T18:24:44Z" level=info msg="Connecting weather.im:5222" prefix=xmpp
-
+Dec 29 18:26:42 racknerd-28fca83 systemd[1]: Started matterbridge.service - Matterbridge daemon.
+Dec 29 18:26:42 racknerd-28fca83 matterbridge[2264]: time="2024-12-29T18:26:42Z" level=info msg="Running version 1.26.0 6dafebc7" prefix=main
+Dec 29 18:26:42 racknerd-28fca83 matterbridge[2264]: time="2024-12-29T18:26:42Z" level=info msg="Opening log file /var/log/matterbridge/matterbridge.log" prefix=config
 ```
