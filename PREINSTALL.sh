@@ -26,6 +26,7 @@ addgroup matterbridge
 # Set owners
 chown -R matterbridge:matterbridge /srv/matterbridge
 chown -R matterbridge:matterbridge /etc/matterbridge
+chown -R matterbridge:matterbridge /var/log/matterbridge
 
 # Set Permissions
 chmod a+x /srv/matterbridge/matterbridge-1.26.0-linux-64bit
