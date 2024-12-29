@@ -1,6 +1,6 @@
 # Matterbridge Configuration for ALERT/K4NWS
 ## Purpose
-Provide a repository to store how to configure Matterbridge from [github](https://github.com/42wim/matterbridge) to connect with Weather.IM IEM Chat. This chat is not an ALERT service, but we are simply relying on a relay for this. This can fail at any time, provided without warranty.
+Provide a repository to store how to configure Matterbridge from [github](https://github.com/42wim/matterbridge) to connect with Weather.IM IEM Chat. This chat is not an ALERT service, but we are simply relying on a relay for this. This can fail at any time, provided without warranty. Use must comply with the license agreement defined in this repository.
 
 ## How to install
 ### Get the VM Set Up.
