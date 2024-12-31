@@ -3,7 +3,7 @@ LogFile="/var/log/matterbridge/matterbridge.log"
 
 [xmpp]
 [xmpp.iemchat]
-Server="weather.im:5222"
+Server="129.186.185.33:5222"
 Jid="YOUR-JABBER-OR-XMPP-ID-GOES-HERE@SERVER.COM"
 Password="YOUR-JABBER-OR-XMPP-PASSWORD-GOES-HERE"
 Muc="conference.weather.im"
